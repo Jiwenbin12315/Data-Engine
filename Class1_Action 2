@@ -13,9 +13,9 @@ print("英语的平均/最小/最大/方差/标准差的成绩为%.2f/%.2f/%.2f/
 
 Score=chineses+maths+englishs
 
-Sort_Index=np.argsort(-Score)
+Sort_Index=np.argsort(-Score)   #argsort()函数是将x中的元素从小到大排列，提取其对应的index(索引)，然后输出||当num<0时，np.argsort()[num]就是把数组y的元素反向输出
 Score_HTL=peoples['name'][Sort_Index]
-Score_LTH=Score_HTL[::-1]
+Score_LTH=Score_HTL[::-1]  # 使用切分器倒序输出
 
 print('总分从高到低：',Score_HTL)
 print('总分从低到高：',Score_LTH)

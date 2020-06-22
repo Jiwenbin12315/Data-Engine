@@ -1,6 +1,6 @@
 import requests # 导入requests模块
 import pandas as pd # 导入pandas模块
-from bs4 import BeautifSoup # 导入BeautifSoup模块
+from bs4 import BeautifulSoup # 导入BeautifulSoup模块
 
 # 请求URL并进行封装, 输入为URL地址，输出为soup结构
 

@@ -31,7 +31,7 @@ def analysis(soup):
         # 将解析出的内容，放入到DataFrame当中
         temp['id'], temp['brand'], temp['car_model'], temp['type'], temp['desc'], temp['problem'], temp['datetime'], temp['status'] = id, brand, car_model, type, desc, problem, datetime, status
         df = df.append(temp, ignore_index=True)
-  return df
+return df
 
 # 进行多页分析
 

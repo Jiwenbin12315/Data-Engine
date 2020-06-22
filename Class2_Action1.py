@@ -10,7 +10,7 @@ def get_page_content(request_url):
    html = requests.get(request_url, headers=headers, timeout=10) # 10秒内必须返回响应，否则会报错 一般为了避免再发出请求过程中出现异常而中断请求
    content = html.text
    # 通过content创建BeautifulSoup对象
-   soup = BeautifulSoup(content, 'html.parser', from_encouding='utf-8') # 使用html.parser编码，解码中文网页
+   soup = BeautifulSoup(content, 'html.parser', from_encoding='utf-8') # 使用html.parser编码，解码中文网页
    return soup
 
 # 分析当前页面的投诉
@@ -31,11 +31,11 @@ def analysis(soup):
         # 将解析出的内容，放入到DataFrame当中
         temp['id'], temp['brand'], temp['car_model'], temp['type'], temp['desc'], temp['problem'], temp['datetime'], temp['status'] = id, brand, car_model, type, desc, problem, datetime, status
         df = df.append(temp, ignore_index=True)
-return df
+  return df
 
 # 进行多页分析
 
-page_nume = 20
+page_num = 20
 base_url = 'http://www.12365auto.com/zlts/0-0-0-0-0-0_0-0-0-0-0-0-0-'
 
 # 创建DataFrame

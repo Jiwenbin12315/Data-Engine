@@ -17,7 +17,7 @@ def get_page_content(request_url):
 def analysis(soup):
   temp = soup.find('div', class_='tslb_b') # 查找标签div，只返回第一个匹配到的对象, 通过‘属性=值’的方法进行匹配, 匹配标签内属性使用BeautifulSoup自带的特别关键字class_, tslb_b为HTML内标签
   # 根据待提取的文本创建DataFrame
-  df = pd.DataFrame(columns=['id', 'brand', 'car_model', 'type', 'desc', 'problem', 'datatime', 'status'])
+  df = pd.DataFrame(columns=['id', 'brand', 'car_model', 'type', 'desc', 'problem', 'datetime', 'status'])
   # 返回一个tr标签的列表, tr和td是HTMLde标签，tr代表行，td代表列
   tr_list = temp.find_all('tr') # 返回所有匹配到的结果
   for tr in tr_list:

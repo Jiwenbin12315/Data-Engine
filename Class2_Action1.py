@@ -27,7 +27,7 @@ def analysis(soup):
     # 第一个tr没有td，其余都有八个td
     if len(td_list) > 0:
         # 解析各个字段的内容
-        id, brand, car_model, type, desc, problem, datatime, status = td_list[0].text, td_list[1].text, td_list[2].text, td_list[3].text, td_list[4].text, td_list[5].text, td_list[6].text, td_list[7].text
+        id, brand, car_model, type, desc, problem, datetime, status = td_list[0].text, td_list[1].text, td_list[2].text, td_list[3].text, td_list[4].text, td_list[5].text, td_list[6].text, td_list[7].text
         # 将解析出的内容，放入到DataFrame当中
         temp['id'], temp['brand'], temp['car_model'], temp['type'], temp['desc'], temp['problem'], temp['datetime'], temp['status'] = id, brand, car_model, type, desc, problem, datetime, status
         df = df.append(temp, ignore_index=True)

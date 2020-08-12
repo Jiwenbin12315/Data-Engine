@@ -40,10 +40,10 @@ def rule1():
 
 
 def encode_units(x):
-    if x <= 0:
-        return 0
-    if x >= 1:
-        return 1
+	if x <= 0:
+        	return 0
+	if x >= 1:
+		return 1
 # 采用mlxtend.frequent_patterns工具包
 def rule2():
 	from mlxtend.frequent_patterns import apriori
@@ -63,5 +63,3 @@ def rule2():
 rule1()
 print('-'*100)
 rule2()
-
-

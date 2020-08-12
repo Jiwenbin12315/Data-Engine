@@ -19,17 +19,17 @@ def analysis(soup):
         df = pd.DataFrame(columns=['name', 'lowP', 'HighP', 'picURL'])
         a_list = temp.find_all('a')
         for a in a_list:
-            #解析各个字段的内容
-            temp =  {}
-            print(a_list)
-            name = a.find(class_= "cx-name text-hover").text
-            Price = a.find(class_="cx-price").text
-            lowP = re.split('[-]', Price)[0]+'万'
-            HighP = re.split('[-]', Price)[-1]
-            picURL = 'http:'+ a.find('img').get('src')
-            # 放到DataFrame中
-            temp['name'], temp['lowP'], temp['HighP'], temp['picURL'] = name, lowP, HighP, picURL
-            df = df.append(temp, ignore_index=True)
+                #解析各个字段的内容
+                temp =  {}
+                print(a_list)
+                name = a.find(class_= "cx-name text-hover").text
+                Price = a.find(class_="cx-price").text
+                lowP = re.split('[-]', Price)[0]+'万'
+                HighP = re.split('[-]', Price)[-1]
+                picURL = 'http:'+ a.find('img').get('src')
+                 # 放到DataFrame中
+                temp['name'], temp['lowP'], temp['HighP'], temp['picURL'] = name, lowP, HighP, picURL
+                df = df.append(temp, ignore_index=True)
         return df
 
 result = analysis(soup)
